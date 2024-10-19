@@ -1,0 +1,15 @@
+name: Autograding
+
+on: [push]
+
+jobs:
+  autograding:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run checker script
+        run: ./checker.sh
+        env:
+          CORRECT_HASH: "158dec74edd435d9f5c342f6193b8bbb580bcb735e230235d67e2f1ffe553c40"
